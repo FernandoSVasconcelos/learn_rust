@@ -9,11 +9,14 @@ def main():
         guess = int(input("Please input your guess:"))
         if guess > secret_number:
             os.system("clear")
-            print("Too big!")
+            print("Your guess is", guess)
+            print("But it is too big!")
         elif guess < secret_number:
             os.system("clear")
-            print("Too small!")
+            print("Your guess is", guess)
+            print("But it is too small!")
         elif guess == secret_number:
+            os.system("clear")
             print("Correct answer on the ", x, "try!")
             print("The secret number is", secret_number)
             break
