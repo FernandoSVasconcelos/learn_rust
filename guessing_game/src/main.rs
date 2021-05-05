@@ -3,7 +3,7 @@ use std::io;
 
 fn main() 
 {
-    println!("Guess the number!");
+    println!("Guess the number!\n");
     let secret_number = rand::thread_rng().gen_range(1, 101);
     let mut x = 0;
     loop
@@ -14,7 +14,7 @@ fn main()
 
         io::stdin()
             .read_line(&mut guess)
-            .expect("Failed to read line");
+            .expect("Failed to read line\n");
 
         let guess: u32 = match guess.trim().parse() 
         {
@@ -24,18 +24,17 @@ fn main()
 
         if guess > secret_number
         {
-            println!("Too big!");
+            println!("Too big!\n");
         }
         else if guess < secret_number
         {
-            println!("Too small!");
+            println!("Too small!\n");
         }
         else if guess == secret_number
         {
             println!("Correct answer on the {} try!", x);
-            println!("The secret number is {}", secret_number);
+            println!("The secret number is {}\n", secret_number);
             break;
         }
-        println!("You guessed: {}", guess);
     } 
 }
