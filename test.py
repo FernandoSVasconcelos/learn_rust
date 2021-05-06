@@ -1,12 +1,14 @@
 import random
 import os
 import time
+
 def main():
     secret_number = random.randint(1, 101)
     x = 0
     guess = 50
     flag = 50
     while True:
+        time.sleep(0.5)
         print("Guess the number!")
         x = x + 1
         if guess > secret_number:
@@ -36,5 +38,4 @@ def main():
             print("Correct answer on the ", x, "try!")
             print("The secret number is", secret_number)
             break
-        print(flag)
 main()
