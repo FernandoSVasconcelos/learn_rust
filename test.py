@@ -3,10 +3,11 @@ import os
 import time
 
 def main():
-    secret_number = random.randint(1, 101)
+    r = 100
+    secret_number = random.randint(1, r + 1)
     x = 0
-    guess = 50
-    flag = 50
+    guess = r//2
+    flag = r//2
     while True:
         time.sleep(0.5)
         print("Guess the number!")
@@ -34,7 +35,7 @@ def main():
                 flag = flag
             guess = guess + flag
         elif guess == secret_number:
-            os.system("clear")
+           # os.system("clear")
             print("Correct answer on the ", x, "try!")
             print("The secret number is", secret_number)
             break
